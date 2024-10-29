@@ -7,6 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.Vector;
+
 
 public class JTableTest
 {
@@ -29,10 +32,13 @@ public class JTableTest
         JTextField filterField = new JTextField();
         filterField.addActionListener(e -> applyFilter(sorter, filterField.getText()));
 
+
         // Set up the layout
         frame.setLayout(new BorderLayout());
         frame.add(new JScrollPane(table), BorderLayout.CENTER);
         frame.add(filterField, BorderLayout.NORTH);
+
+
 
         JLabel myLabel = new JLabel("Enter genre in text field to filter and press 'ENTER'.");
         frame.add(myLabel, BorderLayout.SOUTH);
@@ -67,6 +73,10 @@ public class JTableTest
             sorter.setRowFilter(RowFilter.regexFilter("(?i)" + filterText)); // Case insensitive filtering
         }
     }
+
+
+
+
 }
 
 
